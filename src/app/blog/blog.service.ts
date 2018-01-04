@@ -21,7 +21,7 @@ export class BlogService {
        .catch(this.handleError);
   }
 
-  getPost(id: number){
+  getPost(id: number) {
     return this.http.get(this.blogApiUrl + '/' + id)
       .catch(this.handleError);
   }

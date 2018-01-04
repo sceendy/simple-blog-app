@@ -1,5 +1,5 @@
 /**
- * @overview Blog page.  Renders static content.
+ * @overview Blog page.
  */
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +11,7 @@ import { BlogService } from './blog.service';
     <h2>Blog</h2>
     <article *ngFor="let post of posts | blogOrder" class="post__container">
       <header>
-        <h3 class="post__title">{{post.title}}</h3>
+        <a class="post__title" routerLink="/blog/{{post.slug}}">{{post.title}}</a>
         <div class="post__date">{{post.publish_date}}</div>
         <div class="post__author">{{post.author}}</div>
       </header>

@@ -9,8 +9,11 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './Navigation';
 import AboutComponent from './about';
 import HomeComponent from './home';
-import BlogListComponent from './blog';
-import { BlogOrderPipe } from './pipes/blogOrder.pipe';
+
+import { BlogModule } from './blog/blog.module';
+
+import { BlogListComponent } from './blog/BlogList';
+import { BlogPostComponent } from './blog/post/BlogPost';
 
 const routing = RouterModule.forRoot([
   {
@@ -19,6 +22,9 @@ const routing = RouterModule.forRoot([
   }, {
     path: 'blog',
     component: BlogListComponent
+  }, {
+    path: 'blog/:slug',
+    component: BlogPostComponent
   }, {
     path: 'home',
     component: HomeComponent
@@ -33,15 +39,14 @@ const routing = RouterModule.forRoot([
   imports: [
     HttpClientModule,
     BrowserModule,
+    BlogModule,
     routing,
   ],
   declarations: [
     AppComponent,
     NavigationComponent,
     AboutComponent,
-    HomeComponent,
-    BlogListComponent,
-    BlogOrderPipe,
+    HomeComponent
   ],
   bootstrap: [AppComponent]
 })

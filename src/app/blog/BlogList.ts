@@ -4,18 +4,19 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BlogService } from './blog.service';
-//import { BlogFilterPipe } from '../pipes/blogOrder.filter';
 
 @Component({
   selector: 'blog',
   template: `
     <h2>Blog</h2>
-    <div *ngFor="let post of posts">
-      {{post.title}}
-      {{post.publish_date}}
-      {{post.author}}
-      {{post.description}}
-    </div>
+    <article *ngFor="let post of posts | blogOrder" class="post__container">
+      <header>
+        <h3 class="post__title">{{post.title}}</h3>
+        <div class="post__date">{{post.publish_date}}</div>
+        <div class="post__author">{{post.author}}</div>
+      </header>
+      <p>{{post.description}}</p>
+    </article>
   `,
   providers: [BlogService]
 })

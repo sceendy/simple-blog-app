@@ -10,6 +10,7 @@ import { NavigationComponent } from './Navigation';
 import AboutComponent from './about';
 import HomeComponent from './home';
 import BlogListComponent from './blog';
+import { BlogOrderPipe } from './pipes/blogOrder.pipe';
 
 const routing = RouterModule.forRoot([
   {
@@ -40,6 +41,7 @@ const routing = RouterModule.forRoot([
     AboutComponent,
     HomeComponent,
     BlogListComponent,
+    BlogOrderPipe,
   ],
   bootstrap: [AppComponent]
 })

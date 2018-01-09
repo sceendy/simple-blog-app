@@ -12,8 +12,8 @@ import HomeComponent from './home';
 
 import { BlogModule } from './blog/blog.module';
 
-import { BlogListComponent } from './blog/BlogList';
-import { BlogPostComponent } from './blog/post/BlogPost';
+import { BlogListComponent } from './blog/list.component';
+import { BlogPostComponent } from './blog/post/post.component';
 
 const routing = RouterModule.forRoot([
   {

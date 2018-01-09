@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
@@ -24,5 +24,18 @@ export class BlogService {
   getPost(id: number) {
     return this.http.get(this.blogApiUrl + '/' + id)
       .catch(this.handleError);
+  }
+
+  getPostComments(id: number) {
+    return this.http.get(`${this.blogApiUrl}/${id}/comments`)
+      .catch(this.handleError);
+  }
+
+  addPostComment(comment: Object, id: number) {
+    return this.http.post(
+      `${this.blogApiUrl}/${id}/comments`, 
+      comment, 
+      { headers: new HttpHeaders()
+    }).catch(this.handleError);
   }
 }

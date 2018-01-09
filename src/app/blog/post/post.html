@@ -1,6 +1,7 @@
 <div class="post" *ngIf="post">
   <h3 class="post__title">{{post.title}}</h3>
-  by {{post.author}}
-  on {{post.publish_date }}
+  by <strong>{{post.author}}</strong>
+  on {{post.publish_date | date: 'MMM d, y @ h:mm:ss a'}}
   <div [innerHTML]="post.content" class="u--padding-top-20"></div>
+  <comments [postId]="id">Loading comments...</comments>
 </div>

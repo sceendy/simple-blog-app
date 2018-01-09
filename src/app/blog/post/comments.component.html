@@ -1,0 +1,39 @@
+<hr />
+<div class="flex__title-action">
+  <div>
+    <h5 class="u--margin-none">Comments</h5>
+  </div>
+  <button class="btn--primary" (click)="showCommentForm()">Add Comment</button>
+</div>
+
+<div *ngIf="commentsMessage" 
+  class="u--padding-top-20 u--text-center">
+  {{commentsMessage}}
+</div>
+<ul *ngIf="!commentsMessage" class="list--comments">
+  <li *ngFor="let comment of comments | Order">
+    <strong>{{comment.user}}</strong> - {{comment.date | date: 'short'}}
+    <p>{{comment.content}}</p>
+  </li>
+</ul>
+
+<div *ngIf="addingComment">
+  <strong>Write comment</strong>
+  <form
+    [formGroup]="commentForm"
+    (ngSubmit)="addComment(commentForm.value)"
+    class="form">
+    <div>
+      <label for="nameInput">*Name:</label>
+      <input type="text" formControlName="user" mame="nameInput"/>
+    </div>
+    <div>
+      <label for="commentInput">*Comment:</label>
+      <textarea formControlName="content" name="commentInput"></textarea>
+    </div>
+    <div>
+      <button class="btn--primary">Post Comment</button>
+    </div>
+  </form>
+</div>
+<div #commentBox></div>

@@ -9,7 +9,7 @@ import { BlogService } from './blog.service';
   selector: 'blog',
   template: `
     <h2>Blog</h2>
-    <article *ngFor="let post of posts | blogOrder" class="post__container">
+    <article *ngFor="let post of posts | Order" class="post__container">
       <header>
         <a class="post__title" routerLink="/blog/{{post.slug}}">{{post.title}}</a>
         <div class="post__date">{{post.publish_date}}</div>

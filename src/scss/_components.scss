@@ -8,3 +8,37 @@
 }
 
 .post__date { font-size: .9em; }
+
+.flex__title-action {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn--primary {
+  background-color: tomato;
+  border: 1px solid darken(tomato, 5%);
+  color: #fff;
+  font-size: .9em;
+  padding: 5px 15px;
+}
+
+.list--comments {
+  padding-left: 0;
+  padding-top: 20px;
+  list-style-type: none;
+  li {
+    background-color: #efefef;
+    margin-bottom: 15px;
+    padding: 25px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+}

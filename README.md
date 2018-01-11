@@ -2,8 +2,8 @@
 
 ### Quick start
 
-* Run `npm install`
-* Run `npm start` (to start the stubbed out REST API and serve the app)
+* Run `$ npm install`
+* Run `$ npm start` (to start the stubbed out REST API and serve the app)
 * Navigate to `http://localhost:9000/`
 
 ### Testing
